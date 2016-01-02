@@ -14,17 +14,17 @@ class ArticlesController extends Controller
 {
 
 	public function index(){
-		$articles = Article::all();
+		$articles = Article::paginate(10);
 		return view('articles/articles', compact('articles'));
 	}
    
 	public function show($id){
 		$articles = Article::find($id);
-		return view('articles/showArticles', compact('articles'));
+		return view('articles/show', compact('articles'));
 	}
 
 	public function create(){
-		return view('articles/createArticles');
+		return view('articles/create');
 	}
 
 	public function store(ArticleFormRequest $request){
@@ -35,6 +35,31 @@ class ArticlesController extends Controller
 			'title' => $title,
 			'content' => $content
 			]);
+		return redirect()->route('get.articles');
+	}
+
+	public function edit($id){
+		$articles = Article::find($id);
+		return view('articles/edit', compact('articles'));
+	}
+
+	public function update(ArticleFormRequest $request, $id){
+		$title = $request->get('title');
+		$content = $request->get('content');
+
+		$articles = Article::find($id);
+		$articles->update([
+			'title'   => $title,
+			'content' => $content
+			]);
+		return redirect()->route('get.articles');
+	}
+
+	public function delete($id){
+		
+		$articles = Article::find($id);
+		$articles->delete();
+
 		return redirect()->route('get.articles');
 	}
 }

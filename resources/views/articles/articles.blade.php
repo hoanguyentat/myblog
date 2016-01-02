@@ -8,4 +8,8 @@
         <p>{{$a->content}}</p>
         <a style="text-decoration: none;" href="{{route('articles.show', $a->id)}}">Read more</a>
     @endforeach
+
+    <div style="margin-top: 50px;">
+    	{{ $articles->render()}};
+    </div>
 @endsection

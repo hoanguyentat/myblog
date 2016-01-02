@@ -30,7 +30,7 @@ Route::group(['middleware' => ['web']], function () {
 		'uses' => 'ArticlesController@index'
 	]);
 
-	Route::post('/article', [
+	Route::post('/articles', [
 		'as' => 'articles.store',
 		'uses' => 'ArticlesController@store'
 	]);
@@ -42,5 +42,25 @@ Route::group(['middleware' => ['web']], function () {
 		'as' => 'articles.show',
 		'uses' => 'ArticlesController@show'
 	]);
+
+	Route::get('/artiles/{id}/edit`',[
+		'as' => 'articles.edit',
+		'uses' => 'ArticlesController@edit'
+	]);
+
+	Route::put('/artiles/{id}/edit', [
+		'as' => 'articles.update',
+		'uses' => 'ArticlesController@update'
+	]);
+	Route::get('articles/{id}/delete', [
+		'as' => 'articles.delete',
+		'uses' => 'ArticlesController@delete'
+	]);
 });
 
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
+});

@@ -27,8 +27,6 @@
 			<li><a class="navbar-button" href="/admin">Admin</a></li>
 			@endif -->			
 			<li><a class="navbar-button" href=" {{route('articles.create')}} ">Tạo bài viết mới</a></li>
-<!-- 			<li><a class="navbar-button" href="#">Quizzes</a></li>
-			<li><a class="navbar-button" href="#">Video</a></li> -->
 			<li class="dropdown">
 				<a id= "dropDown" href="#" class="dropdown-toggle navbar-button" data-toggle="dropdown">More<b class="caret"></b></a>
 				<ul id="dropdown-menu" class="dropdown-menu">
@@ -38,28 +36,16 @@
 			</li>
 		</ul>
 		<form class="navbar-form navbar-right" role="search">
-		
-			<!-- search button-->
-			<!--<div class="form-group">
-				<input type="text" class="form-control" placeholder="Search">
-
-			
-			        <button type="button" class="btn btn-default btn-sm">
-          				<span class="glyphicon glyphicon-search"></span> Submit 
-        			</button>
-			</div>-->
 			@if (auth()->user())
 				<li class="dropdown">
 					<a href="#" style="text-decoration: none;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ auth()->user()->name }} <span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
+						<li><a href="{{ url('/logout') }}">Đăng xuẩt</a></li>
 					</ul>
 				</li>
-			<!--<a class="btn btn-primary" href="/auth/logout" role="button">Logout</a>-->
 			@else
-			<a class="btn btn-primary" href="/auth/login" role="button">Login</a>
+			<a class="btn btn-primary" href="/login" role="button">Đăng nhập</a>
 			@endif
 		</form>
-	</div><!-- /.navbar-collapse -->
-	<!-- </div> -->
+	</div>
 </nav>
