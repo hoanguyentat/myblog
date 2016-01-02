@@ -56,7 +56,7 @@ class ArticlesController extends Controller
 	}
 
 	public function delete($id){
-		
+
 		$articles = Article::find($id);
 		$articles->delete();
 

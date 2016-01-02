@@ -4,7 +4,7 @@
 	<div class="navbar-header">
 	<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="padding-top: 9px;">
 		<!-- <button style="padding-top: px; height: 50px;background-color: #e7e7e7"> -->
-			<a id="HomeSmall" style="text-decoration: none; font-size: 20px; color: red;" href="/"><b><b style="font-size: 25px">H</b>ola<b style="font-size: 25px">B</b>log</b></a>
+			<a id="HomeSmall" style="text-decoration: none; font-size: 20px; color: #2181ec;" href="/"><strong><b style="font-size: 25px">H</b>ola<b style="font-size: 25px">B</b>log</strong></a>
 		<!-- </button> -->
 	</div>
 	<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
@@ -23,22 +23,21 @@
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav">
 			<li><a class="navbar-button" href="/">Trang chủ</a></li>
-<!-- 			@if ((auth()->user()) && (auth()->user()->admin == 1))
-			<li><a class="navbar-button" href="/admin">Admin</a></li>
-			@endif -->			
-			<li><a class="navbar-button" href=" {{route('articles.create')}} ">Tạo bài viết mới</a></li>
+			@if (Auth::check())
+				<li><a class="navbar-button" href=" {{route('articles.create')}} ">Tạo bài viết mới</a></li>
+			@endif
 			<li class="dropdown">
 				<a id= "dropDown" href="#" class="dropdown-toggle navbar-button" data-toggle="dropdown">More<b class="caret"></b></a>
 				<ul id="dropdown-menu" class="dropdown-menu">
-					<li><a href="#">Grammar</a></li>
-					<li><a href="#">Another action</a></li>
+					<li><a href="#">Giới thiệu bản thân</a></li>
+					<li><a href="#">Chưa biết làm gì</a></li>
 				</ul>
 			</li>
 		</ul>
 		<form class="navbar-form navbar-right" role="search">
-			@if (auth()->user())
+			@if (Auth::check())
 				<li class="dropdown">
-					<a href="#" style="text-decoration: none;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ auth()->user()->name }} <span class="caret"></span></a>
+					<a href="#" style="text-decoration: none;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ auth()->user()->name }}<span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="{{ url('/logout') }}">Đăng xuẩt</a></li>
 					</ul>

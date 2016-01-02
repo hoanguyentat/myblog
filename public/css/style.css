@@ -16,6 +16,16 @@ body {
   background: #fafafa;
 }
 
+h2#title{
+  color: #e74c3c;
+  font-weight: bold;
+  font-style: normal;
+}
+
+p#title{
+  font-size: 15px;
+}
+
 @media (max-width: 479px){
   header{
     height: 0px;
@@ -37,7 +47,7 @@ body {
     font-size: 30px;
     /*padding-top: 10px;*/
     font-weight: bold;
-    color: green;
+    color: #2181ec;
     text-align: left;
     margin:0 auto;
   }
@@ -58,7 +68,7 @@ body {
     font-size: 35px;
     /*padding-top: 20px;*/
     font-weight: bold;
-    color: green;
+    color: #2181ec;
     text-align: left;
     margin:0 auto;
   }
@@ -107,14 +117,14 @@ body {
     font-size: 38px;
     /*padding-top: 20px;*/
     font-weight: bold;
-    color: green;
+    color: #2181ec;
     text-align:left;
     margin:0 auto;
   }
   p.header{
     font-size: 28px;
     text-align:left;
-    color: green;
+    color: #2181ec;
     margin: 0 auto;
   }
   footer{

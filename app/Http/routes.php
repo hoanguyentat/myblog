@@ -31,10 +31,12 @@ Route::group(['middleware' => ['web']], function () {
 	]);
 
 	Route::post('/articles', [
+		'middleware' =>  'auth',
 		'as' => 'articles.store',
 		'uses' => 'ArticlesController@store'
 	]);
 	Route::get('articles/create', [
+		'middleware' =>  'auth',
 		'as' => 'articles.create',
 		'uses' => 'ArticlesController@create'
 	]);
@@ -44,15 +46,18 @@ Route::group(['middleware' => ['web']], function () {
 	]);
 
 	Route::get('/artiles/{id}/edit`',[
+		'middleware' =>  'auth',
 		'as' => 'articles.edit',
 		'uses' => 'ArticlesController@edit'
 	]);
 
 	Route::put('/artiles/{id}/edit', [
+		'middleware' =>  'auth',
 		'as' => 'articles.update',
 		'uses' => 'ArticlesController@update'
 	]);
 	Route::get('articles/{id}/delete', [
+		'middleware' =>  'auth',
 		'as' => 'articles.delete',
 		'uses' => 'ArticlesController@delete'
 	]);
