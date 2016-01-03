@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('head.title')
-    Trang chủ Blog
+    Trang chủ
 @endsection
 @section('body.content')
 	<?php function catchuoi($chuoi,$gioihan){			

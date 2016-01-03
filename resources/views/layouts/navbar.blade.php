@@ -4,7 +4,7 @@
 	<div class="navbar-header">
 	<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="padding-top: 9px;">
 		<!-- <button style="padding-top: px; height: 50px;background-color: #e7e7e7"> -->
-			<a id="HomeSmall" style="text-decoration: none; font-size: 20px; color: #2181ec;" href="/"><strong><b style="font-size: 25px">H</b>ola<b style="font-size: 25px">B</b>log</strong></a>
+			<a id="HomeSmall" style="text-decoration: none; font-size: 20px; color: #2181ec; font-family: 'Fjalla One', sans-serif;" href="/"><strong><b style="font-size: 25px">H</b>ola<b style="font-size: 25px">B</b>log</strong></a>
 		<!-- </button> -->
 	</div>
 	<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">

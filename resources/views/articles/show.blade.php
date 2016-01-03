@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('head.title')
-    Xem chu de
+    Xem bài viết
 @endsection
 @section('body.content')
 		<a href="/" style="text-decoration: none;" class="btn-link btn"><span class="glyphicon glyphicon-chevron-left" ></span> Quay lại</a>
