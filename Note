@@ -1,0 +1,80 @@
+Node for Laravel 5.2
+
+ADD THÊM ILUMINATE\HTML BÁO LỖI ::BINSHARE()
+		Cần thêm các gói vào trong các file composer.json, config\app.php
+	fix: Edit file vendor\iluminate\html\HtmlServiceProvider.php 
+		binShare() -> singleton();
+		
+MAKE:MODEL + TÊN MODEL: TẠO KẾT NỐI TỚI CƠ SỞ DỮ LIỆU
+
+MAKE:MIGRATION TẠO DATABASE
+
+MAKE:REQUEST + TÊN REQUEST TẠO YÊU CẦU CHO FORM
+
+PHP ARTISAN SERVE: TẠO LOCALHOST CHO LARAVEL (CMD IN PROJECT)
+
+Route::group(['middleware' => ['web']], function () {
+	Route::get('/articles',[
+		'as' => 'get.articles',
+		'uses' => 'ArticlesController@index'
+	]);
+		-->> đặt tên cho route, thuận tiện cho việc thay đổi link trên serve
+
+href="{{route('articles.show', $a->id)}}" truyền vào 1 route với tham số
+
+TẠO DATABASE GIẢ CHO LARAVEL
+https://github.com/laracasts/Laravel-5-Generators-Extended
+
+		composer require laracasts/generators --dev
+			
+		You'll only want to use these generators for local development, 
+		so you don't want to update the production providers array in config/app.php. 
+		Instead, add the provider in app/Providers/AppServiceProvider.php, like so:
+
+		public function register()
+		{
+			if ($this->app->environment() == 'local') {
+				$this->app->register('Laracasts\Generators\GeneratorsServiceProvider');
+			}
+		}
+		
+		Sau khi cài đặt xong. Chúng ta đã có thể sử dụng php artisan make:seed. Ở đây, mình sẽ chạy 2 lệnh sau để tạo seeder cho User và Gist.
+			php artisan make:seed gist
+			php artisan make:seed user
+		DatabaseSeeder.php thực hiện lệnh load các class được tạo.
+		dùng lệnh composer search faker rồi thêm các thư mục cần thiết
+CÁC HÀM TRUY VÂN TRONG DATABASE
+	protected $table = 'ten bang';
+	
+	    protected $fillable = [
+    	'title',					//Chi cho phep update 2 thuoc tinh co trong fillable
+    	'content'
+		];
+		
+	$articles = Articles::all();
+				Articles::find(paramater);
+				Articles::create([
+				'title' => $title
+				]);
+
+{!! FORM::TEXTAREA('CONTENT',"$ARTICLES->CONTENT", ['CLASS' => 'FORM-CONTROL', 'ID' => 'CONTENT']) !!}
+
+XỬ LÝ PHÂN TRANG TRONG LARAVEL
+	$articles = Articles::paginate(number);
+			Articles là model kết nối tới bảng dữ liệu
+	trong trang show data: $articles->render();
+	
+TẠO TRANG LOGIN, REGISTER 
+	php artisan make:auth
+	link: localhost:8000/login 
+THAY FONT CHỮ
+	Sử dụng google search: google font
+TẠO QUYỀN ĐĂNG NHẬP MỚI ĐƯỢC SỬ DỤNG MỘT SÔ CHỨC NĂNG 
+	chèn 'middleware' => 'auth' vào trong Route cần login
+	
+PAGE NOT FOUND 404
+	Chỉnh sửa function render() trong file app/exceptions/Handler.php
+		\Log::error($e);
+        return \Response::view('errors.404');
+	tạo file view 404.blade.php trong layouts/errors/
+	

@@ -36,9 +36,15 @@ return [
     ],
 
     'facebook' => [
-    'client_id' => '965996126794055',
-    'client_secret' => '8900c7896b46373a43474a677102259d',
+    'client_id' => '1508433499452268',
+    'client_secret' => '884ac3f253c9e55b2697d5082bbab40c',
     'redirect' => 'http://localhost:8000/fbcallback',
-],
+    ],
+
+    'google' => [
+    'client_id' => '627465572233-mvthb8j1cp690rc1t2qdts6r0otb87is.apps.googleusercontent.com',
+    'client_secret' => 'Kxw0Z2JL16MobKl4DB7fw6Iy',
+    'redirect' => 'http://localhost:8000/ggcallback',
+    ],
 
 ];

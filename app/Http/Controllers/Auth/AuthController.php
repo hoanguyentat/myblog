@@ -7,6 +7,9 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Contracts\Auth\Authenticatable;
+use Socialize;
+use Auth;
 
 class AuthController extends Controller
 {
@@ -68,5 +71,45 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    public function facebook()
+    {
+        return Socialize::with('facebook')->redirect();     
+    }
+
+    public function fbCallback()
+    {   
+        $user = Socialize::with('facebook')->user();
+        dd($user);
+        $data = ['name' => $user->name, 'email' => $user->email, 'password' => $user->token];
+        if ($user->email == null){
+            $data['email'] = $user->id . "@facebook.com";
+        }   
+        $userDB = User::where('email', $user->email)->first();
+        if (!is_null($userDB)){
+            Auth::login($userDB);
+        }
+        else{
+            Auth::login($this->create($data));
+        }
+        return redirect()->route('/');
+    }
+
+    public function google(){
+        return Socialize::with('google')->redirect();
+    }
+
+    public function ggCallback()
+    {
+        $user = Socialize::with('google')->user();
+        $data = ['name' => $user->name, 'email' => $user->email, 'password' => $user->token];
+        $userDB = User::where('email', $user->email)->first();
+        if ($userDB) {
+            Auth::login($userDB);
+        } else{
+            Auth::login($this->create($data));
+        }
+        return redirect()->route('get.articles');
     }
 }

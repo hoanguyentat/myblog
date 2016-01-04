@@ -3,9 +3,7 @@
 	<!-- <a id="HomeSmall" style="text-decoration: none;" href="">TEC Club</a> -->
 	<div class="navbar-header">
 	<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="padding-top: 9px;">
-		<!-- <button style="padding-top: px; height: 50px;background-color: #e7e7e7"> -->
-			<a id="HomeSmall" style="text-decoration: none; font-size: 20px; color: #2181ec; font-family: 'Fjalla One', sans-serif;" href="/"><strong><b style="font-size: 25px">H</b>ola<b style="font-size: 25px">B</b>log</strong></a>
-		<!-- </button> -->
+			<a id="HomeSmall" style="text-decoration: none; font-size: 20px; color: #2181ec; font-family: 'Montserrat', sans-serif;" href="/"><strong><b style="font-size: 25px">H</b>ola<b style="font-size: 25px">B</b>log</strong></a>
 	</div>
 	<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -29,7 +27,7 @@
 			<li class="dropdown">
 				<a id= "dropDown" href="#" class="dropdown-toggle navbar-button" data-toggle="dropdown">More<b class="caret"></b></a>
 				<ul id="dropdown-menu" class="dropdown-menu">
-					<li><a href="#">Giới thiệu bản thân</a></li>
+					<li><a href="{{route('about.me')}}">Giới thiệu bản thân</a></li>
 					<li><a href="#">Chưa biết làm gì</a></li>
 				</ul>
 			</li>

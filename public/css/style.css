@@ -13,12 +13,17 @@ body {
   position:relative;
   overflow: hidden;
   background: #fafafa;
+  margin-bottom: 50px;
 }
 
 h2#title{
   color: #e74c3c;
   font-weight: bold;
   font-style: normal;
+}
+
+nav{
+  position: fixed;
 }
 
 p#title{

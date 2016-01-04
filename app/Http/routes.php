@@ -62,14 +62,28 @@ Route::group(['middleware' => ['web']], function () {
 		'uses' => 'ArticlesController@delete'
 	]);
 
-	Route::get('/facebook',[
+	Route::get('/auth/facebook',[
 		'as'  => 'facebook.login',
-		'uses' => 'ApiLoginController@facebook'
+		'uses' => 'Auth\AuthController@facebook'
 	]);
 
 	Route::get('/fbcallback',[
 		'as' => 'facebook.callback',
-		'uses' => 'ApiLoginController@fbCallback'
+		'uses' => 'Auth\AuthController@fbCallback'
+	]);
+
+	Route::get('/google', [
+		'as'  => 'google.login',
+		'uses' => 'Auth\AuthController@google'
+	]);
+	Route::get('/ggcallback',[
+		'as' => 'google.callback',
+		'uses' => 'Auth\AuthController@ggCallback'
+	]);
+
+	Route::get('/aboutme',[
+		'as' => 'about.me',
+		'uses' => 'InformationMember@aboutme'
 	]);
 });
 
