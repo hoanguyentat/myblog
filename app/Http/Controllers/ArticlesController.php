@@ -62,4 +62,8 @@ class ArticlesController extends Controller
 
 		return redirect()->route('get.articles');
 	}
+
+	public function unauthorized(){
+		return view('/errors/unauthorized');
+	}
 }

@@ -25,41 +25,50 @@ Route::get('/', 'PagesController@index');
 */
 
 Route::group(['middleware' => ['web']], function () {
-	Route::get('/articles',[
-		'as' => 'get.articles',
-		'uses' => 'ArticlesController@index'
-	]);
 
-	Route::post('/articles', [
-		'middleware' =>  'auth',
-		'as' => 'articles.store',
-		'uses' => 'ArticlesController@store'
-	]);
-	Route::get('articles/create', [
-		'middleware' =>  'auth',
-		'as' => 'articles.create',
-		'uses' => 'ArticlesController@create'
-	]);
-	Route::get('/articles/{id}',[
-		'as' => 'articles.show',
-		'uses' => 'ArticlesController@show'
-	]);
+	Route::group(['prefix' => '/articles'], function(){
 
-	Route::get('/artiles/{id}/edit`',[
-		'middleware' =>  'auth',
-		'as' => 'articles.edit',
-		'uses' => 'ArticlesController@edit'
-	]);
+		Route::get('/',[
+			'as' => 'get.articles',
+			'uses' => 'ArticlesController@index'
+		]);
 
-	Route::put('/artiles/{id}/edit', [
-		'middleware' =>  'auth',
-		'as' => 'articles.update',
-		'uses' => 'ArticlesController@update'
-	]);
-	Route::get('articles/{id}/delete', [
-		'middleware' =>  'auth',
-		'as' => 'articles.delete',
-		'uses' => 'ArticlesController@delete'
+		Route::post('/', [
+			'middleware' =>  'auth',
+			'as' => 'articles.store',
+			'uses' => 'ArticlesController@store'
+		]);
+		Route::get('/create', [
+			'middleware' =>  ['auth'],
+			'as' => 'articles.create',
+			'uses' => 'ArticlesController@create'
+		]);
+		Route::get('/{id}',[
+			'as' => 'articles.show',
+			'uses' => 'ArticlesController@show'
+		]);
+
+		Route::get('/{id}/edit`',[
+			'middleware' =>  ['auth','admin'],
+			'as' => 'articles.edit',
+			'uses' => 'ArticlesController@edit'
+		]);
+
+		Route::put('/{id}/edit', [
+			'middleware' =>  ['auth','admin'],
+			'as' => 'articles.update',
+			'uses' => 'ArticlesController@update'
+		]);
+		Route::get('/{id}/delete', [
+			'middleware' =>  ['auth','admin'],
+			'as' => 'articles.delete',
+			'uses' => 'ArticlesController@delete'
+		]);
+	});
+
+	Route::get('/unauthorized', [
+		'as' => 'unauthorized',
+		'uses' => 'ArticlesController@unauthorized'
 	]);
 
 	Route::get('/auth/facebook',[
