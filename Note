@@ -77,4 +77,9 @@ PAGE NOT FOUND 404
 		\Log::error($e);
         return \Response::view('errors.404');
 	tạo file view 404.blade.php trong layouts/errors/
+GOOGLE, FACEBOOK LOGIN
+	chỉnh sửa composer.json, thêm  "laravel/socialite": "~2.0", trong require
+	chỉnh sửa file config/app.php
+	chỉnh sửa file service.php
+	
 	

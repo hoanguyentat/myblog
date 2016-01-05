@@ -81,19 +81,23 @@ class AuthController extends Controller
     public function fbCallback()
     {   
         $user = Socialize::with('facebook')->user();
-        dd($user);
-        $data = ['name' => $user->name, 'email' => $user->email, 'password' => $user->token];
+        // dd($user['name']);
+        // dd($user->getName()); //Show my entire name.
+    // dd($user->name); //Show my entire name.
+    // dd($user->email); //Show my email.
+    // dd($user->user["first_name"]);
+        $data = ['name' => $user['name'], 'email' => $user->email, 'password' => $user->token];
         if ($user->email == null){
             $data['email'] = $user->id . "@facebook.com";
-        }   
-        $userDB = User::where('email', $user->email)->first();
-        if (!is_null($userDB)){
+        }
+        $userDB = User::where('email', $data['email'])->first();
+        if ($userDB){
             Auth::login($userDB);
         }
         else{
             Auth::login($this->create($data));
         }
-        return redirect()->route('/');
+        return redirect()->route('get.articles');
     }
 
     public function google(){
