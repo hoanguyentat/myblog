@@ -48,6 +48,12 @@ Route::group(['middleware' => ['web']], function () {
 			'uses' => 'ArticlesController@show'
 		]);
 
+		Route::post('/{id}',[
+			'middleware' => 'auth',
+			'as' => 'articles.storecoment',
+			'uses' => 'ArticlesController@commentUpdate'
+		]);
+
 		Route::get('/{id}/edit`',[
 			'middleware' =>  ['auth','admin'],
 			'as' => 'articles.edit',

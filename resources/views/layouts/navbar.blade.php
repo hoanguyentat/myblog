@@ -1,9 +1,9 @@
-<nav class="navbar navbar-default" role="navigation" style = "color: #EAEAEA;">
+<nav class="navbar navbar-default" role="navigation">
 	<!-- Brand and toggle get grouped for better mobile display -->
 	<!-- <a id="HomeSmall" style="text-decoration: none;" href="">TEC Club</a> -->
 	<div class="navbar-header">
 	<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="padding-top: 9px;">
-			<a id="HomeSmall" style="text-decoration: none; font-size: 20px; color: #2181ec; font-family: 'Montserrat', sans-serif;" href="/"><strong><b style="font-size: 25px">H</b>ola<b style="font-size: 25px">B</b>log</strong></a>
+			<a id="HomeSmall" href="/"><strong><b style="font-size: 25px">H</b>ola<b style="font-size: 25px">B</b>log</strong></a>
 	</div>
 	<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -20,9 +20,9 @@
 	<!-- <div class="col-sm-offset-3"> -->
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav">
-			<li><a class="navbar-button" href="/">Trang chủ</a></li>
+			<li id="navbar-button"><a class="navbar-button" href="/">Trang chủ</a></li>
 			@if (Auth::check())
-				<li><a class="navbar-button" href=" {{route('articles.create')}} ">Tạo bài viết mới</a></li>
+				<li id="navbar-button"><a class="navbar-button" href=" {{route('articles.create')}} ">Tạo bài viết mới</a></li>
 			@endif
 			<li class="dropdown">
 				<a id= "dropDown" href="#" class="dropdown-toggle navbar-button" data-toggle="dropdown">More<b class="caret"></b></a>
@@ -34,7 +34,7 @@
 		</ul>
 		<form class="navbar-form navbar-right" role="search">
 			@if (Auth::check())
-				<li class="dropdown">
+				<li style="list-style: none;" class="dropdown">
 					<a href="#" style="text-decoration: none;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ auth()->user()->name }}<span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="{{ url('/logout') }}">Đăng xuẩt</a></li>

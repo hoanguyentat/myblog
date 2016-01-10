@@ -55,7 +55,7 @@
                             <div class="col-md-6 col-md-offset-4">
                                 <a class="btn btn-primary" style="width: 250px;" href="{{route('facebook.login')}}">Sign in with Facebook</a> 
                             </div>
-                            <div class="col-md-6 col-md-offset-4">
+                            <div style="padding-top: 5px;" class="col-md-6 col-md-offset-4">
                                 <a class="btn btn-danger" style="width: 250px;" href="{{route('google.login')}}">Sign in with Google</a> 
                             </div>
                         </div>
