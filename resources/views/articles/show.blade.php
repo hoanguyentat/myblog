@@ -47,6 +47,15 @@
     	@endif
     </div>
     <div style="padding-top: 100px;">
+        <!-- @foreach($cmtArticles as $cmt)
+        @if($cmt->articles_id == $articles->id)
+            <h2>{{$cmt->username}}</h2>
+            <h4>{{$cmt->comment}}</h4>
+        @endif
+        @endforeach -->
+        <div class="fb-like" data-href="http://localhost:8000/articles/{{$articles->id}};" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+    </div>
+    <div>
 <!--         {!!Form::open([
             'route'  => ['articles.storecoment',$articles->id],
             'method' => 'POST',
@@ -59,14 +68,14 @@
         {!!Form::close()!!} -->
         <div class="fb-comments" data-href="http://localhost:8000/articles/{{$articles->id}}" data-numposts="5"></div>
     </div>
-    <!-- <div style="padding-top: 100px;">
-        @foreach($cmtArticles as $cmt)
+    <!-- <div style="padding-top: 100px;"> -->
+        <!-- @foreach($cmtArticles as $cmt)
         @if($cmt->articles_id == $articles->id)
             <h2>{{$cmt->username}}</h2>
             <h4>{{$cmt->comment}}</h4>
         @endif
-        @endforeach
-    </div> -->
+        @endforeach -->
+    <!-- </div> -->
 </div>
 
 @endsection

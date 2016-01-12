@@ -38,6 +38,7 @@
 				</div>
 			</div>
 		</div>
+		<a id="toTop" href="#" style="float:right"></a>
 	</div>
 	@include('layouts.footer')
 		<script type="text/javascript" src="/js/jquery/jquery.js"></script>
