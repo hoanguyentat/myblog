@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>@yield('head.title')</title>
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
 	<link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
@@ -26,7 +27,7 @@
 		@include('layouts.navbar')
 			<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
 				<div class="row">
-					<div class=" col-lg-6 col-lg-offset-2 col-md-6 col-md-offset-2 col-sm-12 col-xs-12">
+					<div class=" col-lg-7 col-lg-offset-2 col-md-7 col-md-offset-2 col-sm-12 col-xs-12">
 							@yield('body.content')
 					</div>
 					<div class="col-xs-12 col-sm-8 col-md-3 col-lg-3">

@@ -19,7 +19,7 @@ class ArticlesController extends Controller
 {
 
 	public function index(){
-		$articles = Article::orderBy('id','dsc')->paginate(10);
+		$articles = Article::orderBy('id','dsc')->paginate(8);
 		$rcArticles = Article::orderBy('id','dsc')->take(5)->get();
 		return view('articles/articles')->with(compact(['articles','rcArticles']));
 	}

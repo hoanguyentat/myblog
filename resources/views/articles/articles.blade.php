@@ -24,7 +24,7 @@
     @foreach($articles as $a)
     <div class="articlespost">
         <h2 id="titlepost">{{$a->title}}</h2>
-        <p id="titlepost">{{ catchuoi($a->content,1000) }}</p>
+        <p id="titlepost"><?php echo catchuoi($a->content,800); ?></p>
         <a id="titlepost" style="text-decoration: none;" href="{{route('articles.show', $a->id)}}"><strong>Read more</strong></a>
         <div style="float: right;">Đăng bởi: {{$a->username}}</div>
     </div>

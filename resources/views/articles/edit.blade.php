@@ -2,6 +2,9 @@
 @section('head.title')
     Chỉnh sửa bài viết
 @endsection
+@section('head.css')
+    <link rel="stylesheet" type="text/css" href="/css/editarticles.css">
+@endsection
 @section('body.content')
     	@if (count($errors) > 0)
 		<div class="alert alert-danger">
@@ -29,14 +32,18 @@
     	{!! Form::label('content','Nội dung') !!}
         <div id="htmlcode">
             <button type="button" class="btn bnt-default" id="xuongdong">Xuống dòng</button>
-            <button type="button" class="btn bnt-default" id="Dam"><span class="glyphicon glyphicon-bold"></span></button>
-            <button type="button" class="btn bnt-default" id="Nghieng"><span class="glyphicon glyphicon-italic"></span></button>
-            <button type="button" class="btn bnt-default" id="Link">Link</button>
+            <button type="button" class="btn bnt-default" id="dam"><span class="glyphicon glyphicon-bold"></span></button>
+            <button type="button" class="btn bnt-default" id="nghieng"><span class="glyphicon glyphicon-italic"></span></button>
+            <button type="button" class="btn bnt-default" id="link">Link</button>
             <button type="button" class="btn bnt-default" id="blockquote">Blockquote</button>
         </div>
     	{!! Form::textarea('content',"$articles->content", ['class' => 'form-control', 'id' => 'editcontent']) !!}
     </div>
 	
 	<button type="submit" class="btn btn-primary">Update</button>
+    <a class="btn btn-info" href="{{route('articles.show',$articles->id)}}">Cancel</a>
     {!!Form::close()!!}
+@endsection
+@section('body.js')
+    <script type="text/javascript" src="/js/articlesedit.js"></script>
 @endsection
