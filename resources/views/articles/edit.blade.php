@@ -27,7 +27,14 @@
 
        <div class="form-group">
     	{!! Form::label('content','Nội dung') !!}
-    	{!! Form::textarea('content',"$articles->content", ['class' => 'form-control', 'id' => 'content']) !!}
+        <div id="htmlcode">
+            <button type="button" class="btn bnt-default" id="xuongdong">Xuống dòng</button>
+            <button type="button" class="btn bnt-default" id="Dam"><span class="glyphicon glyphicon-bold"></span></button>
+            <button type="button" class="btn bnt-default" id="Nghieng"><span class="glyphicon glyphicon-italic"></span></button>
+            <button type="button" class="btn bnt-default" id="Link">Link</button>
+            <button type="button" class="btn bnt-default" id="blockquote">Blockquote</button>
+        </div>
+    	{!! Form::textarea('content',"$articles->content", ['class' => 'form-control', 'id' => 'editcontent']) !!}
     </div>
 	
 	<button type="submit" class="btn btn-primary">Update</button>

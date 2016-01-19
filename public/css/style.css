@@ -5,6 +5,10 @@ body {
    height:100%;
 }
 
+body{
+  color: rgb(45, 197, 9);
+}
+
 /*..........................FROM HEADER.................*/
 div#head{
   margin-bottom: 0px;
@@ -23,7 +27,7 @@ div#header_content{
 }
 
 header{
-  background-color: #ffffff;
+  background-color: #FFF;
 }
 
 p.header{
@@ -39,8 +43,10 @@ h1.header{
   min-height:100%;
   position:relative;
   overflow: hidden;
-  background: #fafafa;
+  background: #f0f8ff ;
   margin-bottom: 50px;
+  background-image: url('/images/dong.gif');
+  /*background-size: 100% 100%; */
 }
 /*..........................FROM NAVBAR.................*/
 a#HomeSmall{
@@ -59,34 +65,41 @@ a#dropDown:hover{
 a#dropDown:visited{
   background-color: #f3cf1b;
 }
+.navbar-default{
+  background-color: rgba(45, 191, 232, 0.9);
+}
 
+.navbar-default .navbar-nav > li > a {
+  color: #333;
+}
 /*..........................END NAVBAR.................*/
 
 
 h2#title{
-  color: #e74c3c;
+  color: #E84B0C;
   font-weight: bold;
   font-style: normal;
 }
 
 p#title{
   font-size: 20px;
+  color: #1712D4;
 }
 
 a#toTop {
     background-position: 50% 50%;
-    bottom: 50px;
+    bottom: 60px;
     box-shadow: rgba(0, 0, 0, 0.0470588) 0px 0px 10px 0px;
     box-sizing: border-box;
     color: rgb(232, 98, 86);
     display: block;
-    height: 60px;
+    height: 40px;
     position: fixed;
     right: 20px;
     text-decoration: none;
     text-indent: 100%;
     white-space: nowrap;
-    width: 60px;
+    width: 40px;
     z-index: 10;
     perspective-origin: 30px 30px;
     transform-origin: 30px 30px;
@@ -98,12 +111,13 @@ a#toTop {
     transition: opacity 0.3s ease 0s, visibility 0s ease 0s;
 }
 
+div#htmlcode ul li{
+  display: inline-block;
+}
+
 @media (max-width: 479px){
   header{
     display: none;
-  }
-  footer{
-    height: 50px;
   }
 }
 
@@ -119,10 +133,6 @@ a#toTop {
     font-size: 15px;
   }
 
-  footer{
-    height: 50px;
-  }
-
   #HomeSmall{
     display: none;
   }
@@ -135,9 +145,6 @@ a#toTop {
 
   p.header{
     font-size: 20px;
-  }
-  footer{
-    height: 40px;
   }
   #HomeSmall{
     display: none;
@@ -153,9 +160,6 @@ a#toTop {
 
   p.header{
     font-size: 20px;
-  }
-  footer{
-    height: 40px;
   }
 
   #HomeSmall{

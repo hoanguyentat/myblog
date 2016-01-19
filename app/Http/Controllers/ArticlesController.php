@@ -63,7 +63,8 @@ class ArticlesController extends Controller
 
 		Article::create([
 			'title' => $title,
-			'content' => $content
+			'content' => $content,
+			'username' => auth()->user()->name
 			]);
 		return redirect()->route('get.articles');
 	}

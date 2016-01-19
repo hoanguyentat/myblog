@@ -21,23 +21,19 @@
 	  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5&appId=1508433499452268";
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
+	@include('layouts.header')
 	<div class="wrapper">
-		@include('layouts.header')
 		@include('layouts.navbar')
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<div class="row">
-				<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-					<div class="row">
-						<div class=" col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
-								@yield('body.content')
-						</div>
-						<div class="col-xs-12 col-sm-8 col-md-3 col-lg-3">
-							@yield('body.recentarticles')
-						</div>
+			<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+				<div class="row">
+					<div class=" col-lg-6 col-lg-offset-2 col-md-6 col-md-offset-2 col-sm-12 col-xs-12">
+							@yield('body.content')
+					</div>
+					<div class="col-xs-12 col-sm-8 col-md-3 col-lg-3">
+						@yield('body.recentarticles')
 					</div>
 				</div>
 			</div>
-		</div>
 		<a id="toTop" href="#" style="float:right"></a>
 	</div>
 	@include('layouts.footer')

@@ -2,6 +2,9 @@
 @section('head.title')
     Trang chủ
 @endsection
+@section('head.css')
+    <link rel="stylesheet" type="text/css" href="/css/articlespost.css">
+@endsection
 @section('body.content')
 	<?php function catchuoi($chuoi,$gioihan){			
     if(strlen($chuoi)<=$gioihan)
@@ -19,9 +22,12 @@
     }
 	}?>
     @foreach($articles as $a)
-        <h2 id="title">{{$a->title}}</h2>
-        <p id="title">{{ catchuoi($a->content,1000) }}</p>
-        <a style="text-decoration: none;" href="{{route('articles.show', $a->id)}}">Read more</a>
+    <div class="articlespost">
+        <h2 id="titlepost">{{$a->title}}</h2>
+        <p id="titlepost">{{ catchuoi($a->content,1000) }}</p>
+        <a id="titlepost" style="text-decoration: none;" href="{{route('articles.show', $a->id)}}"><strong>Read more</strong></a>
+        <div style="float: right;">Đăng bởi: {{$a->username}}</div>
+    </div>
     @endforeach
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div style="margin-top: 50px;">
@@ -40,7 +46,7 @@
                    <div class="container">
                         <blockquote>
                             <h4><strong>{{catchuoi($rca->title,20) }}</strong></h4>
-                            <h6>Ngày đăng: {{date($rca->updated_at)}}<h6>
+                            <h6>Ngày đăng: {{date('d/m/Y',strtotime($rca->updated_at))}}, lúc: {{date('H:m',strtotime($rca->updated_at))}}<h6>
                         </blockquote>
                     </div>
                 </a>
