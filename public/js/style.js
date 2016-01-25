@@ -18,4 +18,10 @@ $(document).ready(function(){
     	$("html, body").animate({scrollTop: 0}, 500);
  	});
 
+ 	$('li#dropdown-nav').mouseover(function(){
+ 		$('ul#dropdown-nav').slideDown('slow');
+ 	});
+ 	 $('li#dropdown-nav').mouseleave(function(){
+ 		$('ul#dropdown-nav').slideUp('slow');
+ 	});
 });

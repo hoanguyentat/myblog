@@ -1,0 +1,16 @@
+div#dropdown-edit{
+	display: relative;
+	display: inline-block;
+	color: #2DC544;
+	background-color: #DDD;
+	/*padding-bottom: 5px;*/
+}
+div#dropdown-content{
+	text-align: left;
+	display: none;
+	position: absolute;
+	background-color: rgb(240, 248, 255);
+	min-width: 100px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding: 12px 16px;
+}

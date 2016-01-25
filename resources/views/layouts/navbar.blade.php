@@ -24,9 +24,9 @@
 			@if (Auth::check())
 				<li id="navbar-button"><a class="navbar-button" href=" {{route('articles.create')}} ">Tạo bài viết mới</a></li>
 			@endif
-			<li class="dropdown">
+			<li id="dropdown-nav" class="dropdown">
 				<a id= "dropDown" href="#" class="dropdown-toggle navbar-button" data-toggle="dropdown">More<b class="caret"></b></a>
-				<ul id="dropdown-menu" class="dropdown-menu">
+				<ul id="dropdown-nav" class="dropdown-menu">
 					<li><a href="{{route('about.me')}}">Giới thiệu bản thân</a></li>
 					<li><a href="#">Chưa biết làm gì</a></li>
 				</ul>

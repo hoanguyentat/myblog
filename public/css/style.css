@@ -46,7 +46,7 @@ h1.header{
   overflow: hidden;
   background: #f0f8ff ;
   margin-bottom: 50px;
-  background-image: url('/images/dong.gif');
+  /*background-image: url('/images/dong.gif');*/
   /*background-size: 100% 100%; */
 }
 /*..........................FROM NAVBAR.................*/
@@ -54,7 +54,7 @@ a#HomeSmall{
   font-family: 'Oswald', sans-serif;
   text-decoration: none;
   font-size: 20px; 
-  color: #89a1d4; 
+  color: rgb(187, 8, 164); 
 }
 
 li#navbar-button:hover{
@@ -80,11 +80,13 @@ h2#title{
   color: #E84B0C;
   font-weight: bold;
   font-style: normal;
+  padding: 10px;
 }
 
 p#title{
   font-size: 20px;
   color: #1712D4;
+  padding: 10px;
 }
 
 a#toTop {

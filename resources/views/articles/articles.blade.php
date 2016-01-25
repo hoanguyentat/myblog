@@ -3,7 +3,7 @@
     Trang chủ
 @endsection
 @section('head.css')
-    <link rel="stylesheet" type="text/css" href="/css/articlespost.css">
+    <link rel="stylesheet" type="text/css" href="/css/articles/articlespost.css">
 @endsection
 @section('body.content')
 	<?php function catchuoi($chuoi,$gioihan){			
@@ -29,10 +29,8 @@
         <div style="float: right;">Đăng bởi: {{$a->username}}</div>
     </div>
     @endforeach
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div style="margin-top: 50px;">
-        	{{ $articles->render()}}
-        </div>
+    <div id="pagination" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-top: 40px;">
+    	{{ $articles->render()}}
     </div>
 @endsection
 @section('body.recentarticles')

@@ -83,7 +83,7 @@ class ArticlesController extends Controller
 			'title'   => $title,
 			'content' => $content
 			]);
-		return redirect()->route('get.articles');
+		return redirect()->route('articles.show',$id);
 	}
 
 	public function delete($id){
