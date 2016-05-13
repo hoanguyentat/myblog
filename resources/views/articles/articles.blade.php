@@ -39,16 +39,18 @@
             <h4>Các bài mới đăng gần đây</h4>
         </div>
         <div class="panel-body">
-            @foreach($rcArticles as $rca)
-                <a style="text-decoration: none;" href="{{route('articles.show', $rca->id)}}">
-                   <div class="container">
-                        <blockquote>
-                            <h4><strong>{{catchuoi($rca->title,20) }}</strong></h4>
-                            <h6>Ngày đăng: {{date('d/m/Y',strtotime($rca->updated_at))}}, lúc: {{date('H:m',strtotime($rca->updated_at))}}<h6>
-                        </blockquote>
-                    </div>
-                </a>
-            @endforeach
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                @foreach($rcArticles as $rca)
+                    <a style="text-decoration: none;" href="{{route('articles.show', $rca->id)}}">
+                       <div class="container">
+                            <blockquote>
+                                <h4><strong>{{catchuoi($rca->title,30) }}</strong></h4>
+                                <h6>Ngày đăng: {{date('d/m/Y',strtotime($rca->updated_at))}}, lúc: {{date('H:m',strtotime($rca->updated_at))}}<h6>
+                            </blockquote>
+                        </div>
+                    </a>
+                @endforeach
+            </div>
         </div>
     </div>
 @endsection

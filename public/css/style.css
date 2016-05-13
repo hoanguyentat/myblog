@@ -70,6 +70,10 @@ a#dropDown:visited{
   background-color: rgba(45, 191, 232, 0.9);
 }
 
+#dropdown-nav{
+  background-color: rgba(45, 191, 232, 0.8);
+}
+
 .navbar-default .navbar-nav > li > a {
   color: #333;
 }

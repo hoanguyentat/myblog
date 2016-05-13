@@ -46,6 +46,7 @@
             <button type="button" class="btn bnt-default" id="nghieng"><span class="glyphicon glyphicon-italic"></span></button>
             <button type="button" class="btn bnt-default" id="link">Link</button>
             <button type="button" class="btn bnt-default" id="blockquote">Blockquote</button>
+            <button type="button" class="btn btn-default" id="audio">Audio</button>
         </div>
     	{!! Form::textarea('content',"$articles->content", ['class' => 'form-control', 'id' => 'content']) !!}
     </div>

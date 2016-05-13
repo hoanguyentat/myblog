@@ -29,7 +29,7 @@ $(document).ready(function(){
 	});
 
 	$('button#link').click(function(){
-		addPro("","<img src='' class='img-responsive' alt=''> ");
+		addPro("","<img src='add-link-here' class='img-responsive' alt=''> ");
 	});
 
 	$('button#blockquote').click(function(){
@@ -59,5 +59,4 @@ $(document).ready(function(){
 	$('#heading6').click(function(){
 		addPro('<h6>','</h6>');
 	});
-
 });
